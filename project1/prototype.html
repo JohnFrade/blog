@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(){
+
+	};
+	Person.prototype={
+	    // constructor:Person,
+		name:"Nicholas",
+		age:29,
+		job:"coder",
+		sayName:function(){
+          alert(this.name);
+		}	
+	};
+	Object.defineProperty(Person.prototype,"constructor",{
+		enumerable:false,
+		value:Person
+	})
+	var friend=new Person();
+	Person.prototype.sayHi=function(){
+		alert("hi");
+	}
+	friend.sayHi();
+	// friend.sayName();
+</script>
+</html>
